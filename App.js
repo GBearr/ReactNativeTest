@@ -7,6 +7,8 @@ import Project3 from "./src/screens/Project3";
 import Project4 from "./src/screens/Project4";
 import Project5 from "./src/screens/Project5";
 import Project6 from "./src/screens/Project6";
+import Project7 from "./src/screens/Project7";
+import Project8 from "./src/screens/Project8";
 
 
 const navigator = createStackNavigator(
@@ -18,6 +20,8 @@ const navigator = createStackNavigator(
     Project4:Project4,
     Project5:Project5,
     Project6:Project6,
+    Project7:Project7,
+    Project8:Project8,
   },
   {
     initialRouteName: 'Home',
