@@ -1,10 +1,32 @@
-import React from "react";
-import { Text } from "react-native";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+import HomeScreen from "./src/screens/HomeScreen";
+import Project1 from "./src/screens/Project1";
+import Project2 from "./src/screens/Project2";
+import Project3 from "./src/screens/Project3";
+import Project4 from "./src/screens/Project4";
+import Project5 from "./src/screens/Project5";
+import Project6 from "./src/screens/Project6";
 
-const App = () => {
-  return (
-    <Text>Hello World!</Text>
-  )
-}
 
-export default App;
+const navigator = createStackNavigator(
+  {
+    Home:HomeScreen,
+    Project1:Project1,
+    Project2:Project2,
+    Project3:Project3,
+    Project4:Project4,
+    Project5:Project5,
+    Project6:Project6,
+  },
+  {
+    initialRouteName: 'Home',
+    defaultNavigationOptions: {
+      title: 'App',
+    },
+  }
+);
+ 
+
+
+export default createAppContainer(navigator);
