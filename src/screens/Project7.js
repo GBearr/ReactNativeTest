@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const Project7=() =>{
-
-}
+const Project7 = () => {};
 
 export default Project7;
