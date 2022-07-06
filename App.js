@@ -10,6 +10,7 @@ import Project7 from './src/screens/Project7';
 import Project8 from './src/screens/Project8';
 import InternScreen from './src/screens/InternScreen';
 
+
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,

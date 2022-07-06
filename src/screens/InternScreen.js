@@ -7,14 +7,24 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import moment from 'moment';
+import {useSafeAreaFrame} from 'react-native-safe-area-context';
 
 const InternScreen = () => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [sentence, setSentence] = useState('');
+  const [startDate, setStarDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
   const onPressButton = () => {
-    setSentence(`My name is ${name} and my surname is ${lastName}`);
+    let start = moment(startDate, 'MM-DD-YYYY');
+    let end = moment(endDate, 'MM-DD-YYYY');
+    const diffInDays = end.diff(start, 'days');
+    setSentence(
+      `My name is ${name} and my surname is ${lastName} ${diffInDays} days left on my internship`,
+    );
+
+    console.log(diffInDays);
   };
 
   return (
@@ -37,11 +47,19 @@ const InternScreen = () => {
       </View>
       <View>
         <Text style={styles.textStyle}>Internship Start Date</Text>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          value={startDate}
+          onChangeText={newStartDate => setStarDate(newStartDate)}
+        />
       </View>
       <View>
         <Text style={styles.textStyle}>Internship End Date</Text>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          value={endDate}
+          onChangeText={newEndDate => setEndDate(newEndDate)}
+        />
       </View>
       <TouchableOpacity
         style={styles.button}
