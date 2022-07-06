@@ -1,7 +1,7 @@
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import HomeScreen from "./src/screens/HomeScreen";
-import Project1 from "./src/screens/Project1";
+import CounterScreen from "./src/screens/CounterScreen";
 import Project2 from "./src/screens/Project2";
 import Project3 from "./src/screens/Project3";
 import Project4 from "./src/screens/Project4";
@@ -14,7 +14,7 @@ import Project8 from "./src/screens/Project8";
 const navigator = createStackNavigator(
   {
     Home:HomeScreen,
-    Project1:Project1,
+    Counter:CounterScreen,
     Project2:Project2,
     Project3:Project3,
     Project4:Project4,

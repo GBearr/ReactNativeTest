@@ -1,15 +1,18 @@
 import React from "react";
-import { Button,Text,StyleSheet,View } from "react-native";
+import { ImageBackground,StyleSheet,View,Button } from "react-native";
+
+const image = {uri:"https://mir-s3-cdn-cf.behance.net/project_modules/disp/496ecb14589707.562865d064f9e.png"};
 
 const HomeScreen = ({navigation}) => {
     return(
+        <ImageBackground source={image}>
     <View style={{justifyContent: "center", width: "100%", height: "100%"}}>
         <View style={styles.parentStyle}>
         
         <View style={styles.viewOneStyle}>
         <Button
-            onPress={()=>navigation.navigate('Project1')}
-            title="Go to Project1"
+            onPress={()=>navigation.navigate('Counter')}
+            title="Go to Counter Screen"
             style={styles.buttonStyle}
         />
         <Button
@@ -69,6 +72,7 @@ const HomeScreen = ({navigation}) => {
            
     </View>
     </View>
+    </ImageBackground> 
     );
 }
 
@@ -92,6 +96,8 @@ const styles=StyleSheet.create({
         height:80,
         width:50,
         position:"absolute",
+        backgroundColor:'gray',
+        zIndex:999
     }
 });
 
