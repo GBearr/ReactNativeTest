@@ -1,11 +1,22 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import moment from 'moment';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const InternScreen = () => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [sentence, setSentence] = useState('');
+
+  const onPressButton = () => {
+    setSentence(`My name is ${name} and my surname is ${lastName}`);
+  };
+
   return (
     <View>
       <View>
@@ -32,11 +43,13 @@ const InternScreen = () => {
         <Text style={styles.textStyle}>Internship End Date</Text>
         <TextInput style={styles.input} />
       </View>
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={onPressButton}
+        onFocus={''}>
         <Text>Create Text</Text>
       </TouchableOpacity>
-      <Text>My name is {name}</Text>
-      <Text>My last name is {lastName}</Text>
+      <Text>{sentence}</Text>
     </View>
   );
 };
