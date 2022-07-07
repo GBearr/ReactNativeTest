@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import moment from 'moment';
-import {useSafeAreaFrame} from 'react-native-safe-area-context';
 
 const InternScreen = () => {
   const [name, setName] = useState('');
@@ -23,8 +22,6 @@ const InternScreen = () => {
     setSentence(
       `My name is ${name} and my surname is ${lastName} ${diffInDays} days left on my internship`,
     );
-
-    console.log(diffInDays);
   };
 
   return (
