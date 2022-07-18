@@ -1,6 +1,5 @@
 import React, {useReducer} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {create} from 'react-test-renderer';
 
 const reducer = (state, action) => {
   switch (action.type) {

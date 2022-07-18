@@ -13,34 +13,36 @@ const CarouselList = () => {
   const data = mockupData();
 
   return (
-    <View style={{backgroundColor: '#09182b'}}>
-      <Text style={styles.topTextStyle}> Öne Çıkanlar {'>'} </Text>
-      <FlatList
-        style={{width: '100%', height: '100%', marginTop: 20}}
-        data={data}
-        horizontal
-        renderItem={item => (
-          <TouchableOpacity
-            style={{width: 150, height: 150}}
-            onPress={() =>
-              console.log(
-                item?.item.posterpath +
-                  item?.item.posterfilelist?.split(';')[10],
-              )
-            }>
-            <Image
-              style={styles.imageStyle}
-              source={{
-                uri:
+    <View style={{backgroundColor: '#09182b', flex: 1}}>
+      <View>
+        <Text style={styles.topTextStyle}> Öne Çıkanlar {'>'} </Text>
+        <FlatList
+          style={{marginTop: 20}}
+          data={data}
+          horizontal
+          renderItem={item => (
+            <TouchableOpacity
+              style={{width: 150, height: 150}}
+              onPress={() =>
+                console.log(
                   item?.item.posterpath +
-                  item?.item.posterfilelist?.split(';')[10],
-              }}
-              onError={() => console.log('error')}
-            />
-            <Text style={styles.titleTextStyle}>{item.item.shorttitle}</Text>
-          </TouchableOpacity>
-        )}
-      />
+                    item?.item.posterfilelist?.split(';')[10],
+                )
+              }>
+              <Image
+                style={styles.imageStyle}
+                source={{
+                  uri:
+                    item?.item.posterpath +
+                    item?.item.posterfilelist?.split(';')[10],
+                }}
+                onError={() => console.log('error')}
+              />
+              <Text style={styles.titleTextStyle}>{item.item.shorttitle}</Text>
+            </TouchableOpacity>
+          )}
+        />
+      </View>
     </View>
   );
 };
