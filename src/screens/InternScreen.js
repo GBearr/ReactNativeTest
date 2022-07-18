@@ -27,44 +27,46 @@ const InternScreen = () => {
   return (
     <View>
       <View>
-        <Text style={styles.textStyle}>Your Name</Text>
-        <TextInput
-          style={styles.input}
-          value={name}
-          onChangeText={newName => setName(newName)}
-        />
+        <View>
+          <Text style={styles.textStyle}>Your Name</Text>
+          <TextInput
+            style={styles.inputStyle}
+            value={name}
+            onChangeText={newName => setName(newName)}
+          />
+        </View>
+        <View>
+          <Text style={styles.textStyle}>Your Last Name</Text>
+          <TextInput
+            style={styles.inputStyle}
+            value={lastName}
+            onChangeText={newLastName => setLastName(newLastName)}
+          />
+        </View>
+        <View>
+          <Text style={styles.textStyle}>Internship Start Date</Text>
+          <TextInput
+            style={styles.inputStyle}
+            value={startDate}
+            onChangeText={newStartDate => setStarDate(newStartDate)}
+          />
+        </View>
+        <View>
+          <Text style={styles.textStyle}>Internship End Date</Text>
+          <TextInput
+            style={styles.inputStyle}
+            value={endDate}
+            onChangeText={newEndDate => setEndDate(newEndDate)}
+          />
+        </View>
+        <TouchableOpacity
+          style={styles.buttonStyle}
+          onPress={onPressButton}
+          onFocus={''}>
+          <Text style={styles.buttonTextStyle}>Create Text</Text>
+        </TouchableOpacity>
+        <Text style={styles.textStyle}>{sentence}</Text>
       </View>
-      <View>
-        <Text style={styles.textStyle}>Your Last Name</Text>
-        <TextInput
-          style={styles.input}
-          value={lastName}
-          onChangeText={newLastName => setLastName(newLastName)}
-        />
-      </View>
-      <View>
-        <Text style={styles.textStyle}>Internship Start Date</Text>
-        <TextInput
-          style={styles.input}
-          value={startDate}
-          onChangeText={newStartDate => setStarDate(newStartDate)}
-        />
-      </View>
-      <View>
-        <Text style={styles.textStyle}>Internship End Date</Text>
-        <TextInput
-          style={styles.input}
-          value={endDate}
-          onChangeText={newEndDate => setEndDate(newEndDate)}
-        />
-      </View>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={onPressButton}
-        onFocus={''}>
-        <Text>Create Text</Text>
-      </TouchableOpacity>
-      <Text>{sentence}</Text>
     </View>
   );
 };
@@ -74,19 +76,26 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: 'bold',
     marginLeft: 10,
+    color: 'gray',
   },
-  input: {
+  inputStyle: {
     margin: 5,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'gray',
     borderRadius: 10,
   },
-  button: {
+  buttonStyle: {
     margin: 20,
     alignItems: 'center',
     backgroundColor: 'gray',
     padding: 20,
     borderRadius: 50,
+    borderColor: 'gray',
+  },
+  buttonTextStyle: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: 'white',
   },
 });
 

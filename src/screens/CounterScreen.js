@@ -1,5 +1,6 @@
 import React, {useReducer} from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {create} from 'react-test-renderer';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -17,21 +18,45 @@ const CounterScreen = () => {
 
   return (
     <View>
-      <Button
+      <TouchableOpacity
         onPress={() => {
           callMyReducer({type: 'increment', payload: 1});
         }}
-        title="Increase"
-      />
-      <Button
+        style={styles.buttonStyle}>
+        <Text style={styles.textStyle}>Increase</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
         onPress={() => {
           callMyReducer({type: 'reset'});
         }}
-        title="Reset"
-      />
-      <Text>Current Count:{state.count}</Text>
+        style={styles.buttonStyle}>
+        <Text style={styles.textStyle}>Reset</Text>
+      </TouchableOpacity>
+      <View style={styles.countContainer}>
+        <Text style={{fontWeight: 'bold'}}>Current Count:{state.count}</Text>
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    borderWidth: 0.9,
+    borderColor: 'white',
+    borderRadius: 17,
+    height: 35,
+    width: '100%',
+    backgroundColor: '#09182b',
+    alignItems: 'center',
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+  },
+  countContainer: {
+    alignItems: 'center',
+    padding: 20,
+  },
+});
 
 export default CounterScreen;

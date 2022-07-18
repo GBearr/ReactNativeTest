@@ -1,72 +1,67 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, View, Button} from 'react-native';
-
-const image = {
-  uri: 'https://mir-s3-cdn-cf.behance.net/project_modules/disp/496ecb14589707.562865d064f9e.png',
-};
+import {TouchableOpacity, StyleSheet, View, Button, Text} from 'react-native';
 
 const HomeScreen = ({navigation}) => {
   return (
-    <ImageBackground source={image}>
-      <View style={{justifyContent: 'center', width: '100%', height: '100%'}}>
-        <View style={styles.parentStyle}>
-          <View style={styles.viewOneStyle}>
-            <Button
-              onPress={() => navigation.navigate('Counter')}
-              title="Counter Screen"
-              style={styles.buttonStyle}
-            />
-            <Button
-              onPress={() => navigation.navigate('Intern')}
-              title="Internship Informations"
-              style={styles.buttonStyle}
-            />
-          </View>
-        </View>
-        <View style={styles.parentStyle}>
-          <View style={styles.viewOneStyle}>
-            <Button
-              onPress={() => navigation.navigate('Carousel')}
-              title="Go to CarouselList"
-              style={styles.buttonStyle}
-            />
-            <Button
-              onPress={() => navigation.navigate('Project4')}
-              title="Go to Project4"
-              style={styles.buttonStyle}
-            />
-          </View>
-        </View>
-        <View style={styles.parentStyle}>
-          <View style={styles.viewOneStyle}>
-            <Button
-              onPress={() => navigation.navigate('Project5')}
-              title="Go to Project5"
-              style={styles.buttonStyle}
-            />
-            <Button
-              onPress={() => navigation.navigate('Project6')}
-              title="Go to Project6"
-              style={styles.buttonStyle}
-            />
-          </View>
-        </View>
-        <View style={styles.parentStyle}>
-          <View style={styles.viewOneStyle}>
-            <Button
-              onPress={() => navigation.navigate('Project7')}
-              title="Go to Project7"
-              style={styles.buttonStyle}
-            />
-            <Button
-              onPress={() => navigation.navigate('Project8')}
-              title="Go to Project8"
-              style={styles.buttonStyle}
-            />
-          </View>
+    <View style={styles.viewStyle}>
+      <Text style={styles.projectsTextStyle}>Projects</Text>
+      <View style={styles.parentStyle}>
+        <View style={styles.viewOneStyle}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Counter')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Counter Screen</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Intern')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Internship</Text>
+          </TouchableOpacity>
         </View>
       </View>
-    </ImageBackground>
+      <View style={styles.parentStyle}>
+        <View style={styles.viewOneStyle}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Carousel')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Carousel List</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Project4')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Project 4</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.parentStyle}>
+        <View style={styles.viewOneStyle}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Project5')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Project 5</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Project6')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Project 6</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+      <View style={styles.parentStyle}>
+        <View style={styles.viewOneStyle}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Project7')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Project 7</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Project8')}
+            style={styles.buttonStyle}>
+            <Text style={styles.textStyle}>Project 8</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </View>
   );
 };
 
@@ -83,15 +78,32 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   textStyle: {
-    fontSize: 30,
-    justifyContent: 'center',
+    fontSize: 18,
+    color: 'white',
+    fontWeight: 'bold',
+    alignItems: 'center',
+  },
+  projectsTextStyle: {
+    fontSize: 18,
+    color: 'white',
+    fontWeight: 'bold',
+    marginLeft: 33,
+    marginBottom: 20,
   },
   buttonStyle: {
-    height: 80,
-    width: 50,
-    position: 'absolute',
-    backgroundColor: 'gray',
-    zIndex: 999,
+    borderWidth: 0.9,
+    borderColor: 'white',
+    borderRadius: 17,
+    height: 35,
+    width: 140,
+    backgroundColor: '#09182b',
+    alignItems: 'center',
+  },
+  viewStyle: {
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#09182b',
   },
 });
 
