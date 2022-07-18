@@ -26,8 +26,8 @@ const HomeScreen = ({navigation}) => {
         <View style={styles.parentStyle}>
           <View style={styles.viewOneStyle}>
             <Button
-              onPress={() => navigation.navigate('Project3')}
-              title="Go to Project3"
+              onPress={() => navigation.navigate('Carousel')}
+              title="Go to CarouselList"
               style={styles.buttonStyle}
             />
             <Button
