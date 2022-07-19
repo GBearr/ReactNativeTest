@@ -22,6 +22,7 @@ const CarouselList = () => {
           data={data.slice(0, 10 * page)}
           horizontal
           onEndReachedThreshold={0.5}
+          initialScrollIndex={3}
           onEndReached={() => {
             if (data.slice(0, page * 10).length < data.length)
               setPage(page + 1);
