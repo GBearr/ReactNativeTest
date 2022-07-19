@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Image,
@@ -11,6 +11,7 @@ import mockupData from './MockupData.js';
 
 const CarouselList = () => {
   const data = mockupData();
+  const [page, setPage] = useState(1);
 
   return (
     <View style={{backgroundColor: '#09182b', flex: 1}}>
@@ -18,8 +19,13 @@ const CarouselList = () => {
         <Text style={styles.topTextStyle}> Öne Çıkanlar {'>'} </Text>
         <FlatList
           style={{marginTop: 20}}
-          data={data}
+          data={data.slice(0, 10 * page)}
           horizontal
+          onEndReachedThreshold={0.5}
+          onEndReached={() => {
+            if (data.slice(0, page * 10).length < data.length)
+              setPage(page + 1);
+          }}
           renderItem={item => (
             <TouchableOpacity
               style={{width: 150, height: 150}}
